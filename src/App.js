@@ -65,7 +65,7 @@ class App extends Component {
           'Content-Type': 'application/json',
     }
     if (token && token !== 'undefined') {
-         headers['Authorization'] = `Bearer ${token}`
+         headers['Authorization'] = `${token}`
     }
     this.oldFactory = function graphQLFetcher(graphQLParams) {
       return fetch(url + '/graphql', {
@@ -84,7 +84,7 @@ class App extends Component {
           <label>url
             <input type="text" id="url-input" onChange={this.onUrlChange.bind(this)} value={this.state.url}/>
           </label>
-          <label>token
+          <label>Authorization
             <input type="text" id="token-input" onChange={this.onTokenChange.bind(this)} value={this.state.token}/>
           </label>
         </div>
